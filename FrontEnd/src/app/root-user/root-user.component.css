@@ -1,0 +1,83 @@
+/* override bootstrap styles */
+@import url('http://fonts.googleapis.com/css?family=Oswald:300,400:latin,latin-ext');
+
+.navbar-form input, .form-inline input {
+  width:auto;
+}
+
+body {
+  padding-top:50px;
+  color:#646464;
+  background-color:#efefef;
+}
+
+h1,h2,h3,.highlight,.navbar a,#masthead h4 {
+  font-family:'Oswald',arial narrow,sans-serif;
+}
+
+footer {
+
+  margin-top:40px;
+  padding-top:40px;
+  padding-bottom:40px;
+  background-color:#cecece;
+ 
+}
+
+
+#masthead {
+  min-height:199px;
+  background-color:#000044;
+  color:#aaaacc;
+}
+
+#masthead h1 {
+  font-size: 55px;
+  line-height: 1;
+  color:#fefeff;
+  margin-top:50px;
+}
+
+#masthead .well {
+  margin-top:31px;
+  background-color:#111166;
+  border-color:#000022;
+  color:#efefff;
+  min-height:127px;
+}
+
+#topPanel {
+  padding-top:0px;
+  padding-left:22px;
+  padding-right:22px;
+}
+#topPanel .panel-body {
+  padding-top:0px;
+}
+
+
+.top-spacer {
+  background-color:#ffffff;
+  height:40px;
+}
+
+
+.panel {
+  border-color:transparent;
+  border-radius:0;
+}
+
+
+
+.txt-container {
+  overflow:hidden;
+  height:100px;
+}
+
+.panel .lead {
+  overflow:hidden;
+  height:90px;
+}
+
+
+    

@@ -1,0 +1,29 @@
+<div class="global-container bg-light">
+    <div class="card login-form mt-5">
+        <div class="card-body">
+            <h1 class="card-title text-cent">LOGIN</h1>
+            <div class="card-text">
+                <form [formGroup]="loginForm" (ngSubmit)="loginUser()">
+                    <div class="form-floating mb-2">
+                        <input type="email" class="form-control form-control-sm text-white rounded-pill" id="floatingInput" placeholder="E-mail" formControlName="email">
+                        <label for="form-floating">E-mail</label>
+                        <small class="text-danger" *ngIf="loginForm.controls['email'].dirty && loginForm.hasError('required','email')">*E-mail cannot be empty.</small>
+                        <small class="text-danger" *ngIf="loginForm.hasError('email','email')">*E-mail must be valid.</small>
+                    </div>
+                    <div class= "form-floating mb-2">
+                        <input type="password" class="form-control form-control-sm text-white rounded-pill" id="floatingInput" placeholder="Password" formControlName="password">
+                        <label for="form-floating" class="">Password</label>
+                        <small class="text-danger" *ngIf="loginForm.controls['password'].dirty && loginForm.hasError('required','password')">*Password cannot be empty.</small>
+                                    <small class="text-danger" *ngIf="loginForm.hasError('pattern','password')">*Password must be in valid format.</small>
+                    </div>
+                    <div class="d-grid gap-2 col-6 mx-auto">
+                        <button type="submit" class="btn" [disabled]="!loginForm.valid">Sign in</button>
+                    </div>
+                    <div class="signup">
+                        Don't have an account? <a routerLink="signup">Sign Up</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

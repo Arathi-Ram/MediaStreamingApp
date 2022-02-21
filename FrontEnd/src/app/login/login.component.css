@@ -1,0 +1,55 @@
+.global-container{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #d8bfd8;
+    
+}
+form{
+    padding-top: 10px;
+    font-size: 14px;
+    margin-top: 30px;
+    
+}
+.login-form{
+    width: 380px;
+    height: 450px;
+    margin: 20px;
+    background: #1a2226 !important;
+    border-radius: 10px !important;
+    box-shadow: 10px 6px 5px 0px rgba(125,89,125,1);    /* box-shadow:  0 .5rem 1rem rgba(black, .15); */
+}
+input{
+    background: #1a2226;
+    border: 2px solid #4b0082;
+    border-radius: 10px;
+    margin-bottom: 25px;
+
+}
+input:focus{
+    outline: none;
+    border: none;
+    background: #1a2226;
+    margin: 0;
+    margin-bottom: 25px;
+}
+.card-title{
+    font-weight: 800;
+    padding-top: 20px;
+}
+.btn{
+    background: #8860a5;
+    font-size: 14px;
+    transform: translateY(10px);
+    border-radius: 10px !important;
+
+}
+.signup{
+    text-align: center;
+    padding-top: 25px;
+    
+}
+a{
+    text-decoration: none;
+}
