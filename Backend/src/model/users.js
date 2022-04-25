@@ -19,9 +19,11 @@ const userSchema = mongoose.Schema({
         required:"Password cannot be empty",
         minlength:[4,"Password must have atleast 4 characters"]
     },
-    role:{
-        type: String
-    }
+    roles: [
+        {
+            type: Number
+        }
+    ]
 });
 // custom validation for email:
 userSchema.path('email').validate((val) => {

@@ -1,0 +1,167 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
+    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+  </symbol>
+  <symbol id="info-fill" fill="currentColor" viewBox="0 0 16 16">
+    <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+  </symbol>
+  <symbol id="exclamation-triangle-fill" fill="currentColor" viewBox="0 0 16 16">
+    <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+  </symbol>
+</svg>
+<!-- https://www.codegrepper.com/code-examples/typescript/angular+9+scroll+to+top -->
+<mat-drawer-container>
+    <mat-drawer mode="side" [opened]="sideBarOpen">
+        <app-side-nav>  </app-side-nav>
+    </mat-drawer>
+    <mat-drawer-content>
+        <app-header (toggleSidebarForMe)="sideBarToggler()"></app-header>
+        <div class="container-fluid page"  #scroll>
+            <div class="page__box p-4"> Home</div>
+            <div class="page__content shadow p-3 position-relative">
+                <div class="page__content-data position-absolute ">
+                    <Section>
+                        <div class="container-fluid w-auto" >
+                          
+                            <Section class="p-3 mt-3">
+                              <div>
+                                <div class="alert alert-warning d-flex align-items-center mb-3 p-4 mx-auto" role="alert" *ngIf="warning">
+                                  <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+                                  <div>
+                                    Please wait, Loading.....
+                                  </div>
+                                </div>
+                                <div class="alert alert-danger d-flex align-items-center mb-3 p-4 mx-auto" role="alert" *ngIf="serverErr">
+                                    <svg class="bi flex-shrink-0 me-4" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+                                    <div>
+                                        {{serverMessage}}
+                                    </div>
+                                  </div>
+                      
+                                <div class="alert alert-success d-flex align-items-center mb-3 p-4 mx-auto" role="alert" *ngIf="serverSuccess">
+                                  <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+                                  <div>
+                                    Video successfully uploaded!
+                                  </div>
+                                </div>
+                              </div>
+                              <div >
+                                <div class="card mx-auto cardShadow mb-5 w-auto">
+                                  <div class="card-header">
+                                    <h1 class="text-center"> Upload Video Form</h1>
+                                  </div>
+                                  <div class="card-body m-3">
+                                    <form [formGroup]="uploadVideoForm" class="row justify-content-center m-2 " enctype="multipart/form-data" (ngSubmit) = "upload(scroll)">
+                                      <!-- <div class="d-flex">
+                                        <div class="row">
+                                          <div class="col-md-6 mb-3">
+                                            <label for="title" class="form-label">Title</label>
+                                            <input type="text" name="title" class="form-control" formControlName="title">
+                                            <small class="text-danger" *ngIf="uploadVideoForm.controls['title'].dirty && uploadVideoForm.hasError('required','title')"> *Title is required.</small>
+                                          </div>
+                                          <div class="col-md-6 mb-3 ">
+                                            <label for="inputGenre" class="form-label">Genre</label>
+                                            <select name="genre" id="inputGenre" class="form-select" (change)="onGenreInput($event)" required >
+                                              <option selected disabled>Choose Genre........</option>
+                                              <option value="Comical">Comical</option>
+                                              <option value="Thriller">Thriller</option>
+                                              <option value="Animation">Animation</option>
+                                              <option value="Horror">Horror</option>
+                                              <option value="Classical">Classical</option>                             
+                                              <option value="Mystery">Mystery</option>                               
+                                            </select>
+                                            
+                                          </div>
+                                        </div>  
+                                    </div> -->
+                                    <div class="d-flex">
+                                      <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                          <label for="title" class="form-label">Title</label>
+                                          <input type="text" name="title" id="title" class="form-control" formControlName="title">
+                                          <small class="text-danger" *ngIf="uploadVideoForm.controls['title'].dirty && uploadVideoForm.hasError('required','title')"> *Title is required.</small>
+                                        </div>
+                                        <div class="col-md-6 mb-3 ">
+                                          <label for="inputGenre" class="form-label"> Genre</label>
+                                          <select name="quality" id="inputGenre" class="form-select" (change)="onGenreInput($event)" required>
+                                            <option selected disabled>Choose Genre..</option>
+                                              <option value="Comical">Comical</option>
+                                              <option value="Gaming">Gaming</option>
+                                              <option value="Animation">Animation</option>
+                                              <option value="Classical">Classical</option>                             
+                                          </select>
+                                        </div>
+                                      </div>  
+                                  </div>
+                                        <div class="d-flex">
+                                            <div class="row">
+                                              <div class="col-md-6 mb-3">
+                                                <label for="tags" class="form-label">Tags</label>
+                                                <input type="text" name="tags" id="tags" class="form-control" formControlName="tags">
+                                                <small class="text-danger" *ngIf="uploadVideoForm.controls['tags'].dirty && uploadVideoForm.hasError('required','tags')"> *Tags are required.</small>
+                                              </div>
+                                              <div class="col-md-6 mb-3 ">
+                                                <label for="inputQuality" class="form-label">Video Quality</label>
+                                                <select name="quality" id="inputQuality" class="form-select" (change)="onQualityInput($event)" required>
+                                                  <option selected disabled>Video Quality..</option>
+                                                  <option value="1080p">1080p</option>
+                                                  <option value="720p">720p</option>
+                                                  <option value="480p">480p</option>
+                                                  <option value="360p">360p</option>                             
+                                                </select>
+                                                <small class="text-warning">*Video Quality must be above 360p.</small> <br>
+                                              </div>
+                                            </div>  
+                                        </div>
+                                        <div class="d-grid ">
+                                          <div class="col-10 mb-3 ">
+                                            <label class="form-label">Select Video</label><br>
+                                            <input type="file" name="video" id="" accept="video/*" class="form-control-file" (change) = "onFileChange($event)" formControlName="video"><br>
+                                            <small class="text-warning"> *Video duration must be less than 25 mins.</small>
+                                            <br>
+                                            <small class="text-danger" *ngIf="uploadVideoForm.controls['video'].dirty && uploadVideoForm.hasError('required','video')"> *Video upload required.</small>
+                                          </div>
+                                          <div class="col-10 mb-3">
+                                            <label class="form-label">Select Thumbnail</label><br>
+                                            <input type="file" name="thumbnail" id="" accept="image/*" class="form-control-file" (change)= "onThumbnailFileChange($event)" formControlName="thumbnailFile">
+                                            <br>
+                                            <small class="text-danger" *ngIf="uploadVideoForm.controls['thumbnailFile'].dirty && uploadVideoForm.hasError('required','thumbnailFile')"> *Thumbnail required.</small>
+                                          </div>
+                                          <div class="col-10 mb-3">
+                                            <label class="form-label">Select Subtitle</label><br>
+                                            <input type="file" name="subtitle" id="" accept="file/*" class="form-control-file" (change)= "onSubtitleFileChange($event)" formControlName="subtitle">
+                                            <br>
+                                            <small class="text-danger" *ngIf="uploadVideoForm.controls['subtitle'].dirty && uploadVideoForm.hasError('required','subtitle')"> *Subtitle file upload required.</small>
+                                          </div>
+                                        </div>
+                                        
+                                       <div class="d-grid mx-auto col-8">
+                                        <button type="submit" class="btn btn-dark" [disabled]="!uploadVideoForm.valid"> Upload Video </button>
+                                        <!-- <button type="submit" class="btn btn-outline-warning btn-sm text-danger mt-3" onclick="reset()"> Reset All </button> -->
+                                       </div>
+                                       
+                                    </form>
+                                  </div>
+                                </div>
+                              </div>
+                            </Section>
+                          </div>
+                      </Section>
+                </div>
+            </div>
+        </div>
+    </mat-drawer-content>
+  </mat-drawer-container>
+
+
+
+
+
+
+
+
+
+
+
+
+

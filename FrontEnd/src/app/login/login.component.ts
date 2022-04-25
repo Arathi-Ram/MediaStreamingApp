@@ -11,6 +11,8 @@ import { AuthService } from '../auth.service';
 export class LoginComponent implements OnInit {
   loginForm!:FormGroup;
   userLogged:any;
+  serverErrorMsg : any  = '';
+
   constructor(
     private formBuilder:FormBuilder,
     private _auth:AuthService,
@@ -32,16 +34,40 @@ export class LoginComponent implements OnInit {
       next: (res) =>
           {
             this.userLogged = res
-            if(this.userLogged.role === "Root User"){
-              localStorage.setItem("rootLoginTok", this.userLogged.token);
+            if(this.userLogged.roles[0] === 1111){
+              localStorage.setItem("TOKEN", this.userLogged.token);
+              localStorage.setItem("Id",this.userLogged.userLogged._id);
+              console.log(`root user ${this.userLogged.roles[0]}`);
+              
               this._router.navigate(['rootUserDash']);
             }
-            // console.log(res);
+            else if(this.userLogged.roles[0] === 3333){
+              localStorage.setItem("TOKEN",this.userLogged.token);
+              localStorage.setItem("Id",this.userLogged.userLogged._id);
+              this._router.navigate(['userDashboard'])
+            }
+            // this.userLogged.roles[0] === 5555
+            else{
+              localStorage.setItem("TOKEN",this.userLogged.token);
+              localStorage.setItem("Id",this.userLogged.userLogged._id);
+              this._router.navigate(['adminDashboard'])
+            }
+            console.log(res);
           },
       error: (err)=>{
-            console.log(err);
+        if(err.status === 422){
+          this.serverErrorMsg = err.error.error;
+          console.log(err.error.error);         
+        }   
+        else if (err.status === 404){
+          this.serverErrorMsg = err.error.error;
+          console.log(err.error.error);
+        }     
+        setTimeout(() => {
+          this.serverErrorMsg = ''
+        }, 3000);
             
-          }
-    })
+      }
+    });
   }
 }

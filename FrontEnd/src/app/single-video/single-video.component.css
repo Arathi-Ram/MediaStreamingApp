@@ -1,0 +1,23 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+video::cue {
+  font-size: medium;
+  text-decoration: none;
+}
+.global-container{
+    height: 100%;
+}
+hr{
+  border: #7c1f88fb 1.5px double;
+}
+.borderCard{
+  border: #33033afb 3px solid;
+  background-color: rgb(153, 127, 153);
+}
+
+ngb-rating {
+  color: #FFC107;
+  font-size: 27px;
+}

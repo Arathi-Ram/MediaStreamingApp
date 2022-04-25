@@ -38,11 +38,17 @@ export class RegistrationComponent implements OnInit {
       error:(err)=>{
         if(err.status === 422){
           this.serverErrorMsg = err.error.error;
+          setTimeout(() => {
+            window.location.reload();
+          }, 2000);
           // console.log(err.error.error);
           
         }
         else{
-          this.serverErrorMsg = "Something went wrong. Please contact Admin.";
+          this.serverErrorMsg = "Something went wrong. Please contact Admin or Try Again.";
+          setTimeout(() => {
+            window.location.reload();
+          }, 2000);
         }
         // this.serverError = true;
         // this.serverErrorMsg = "E-mail address already registered!";

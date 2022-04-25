@@ -1,0 +1,26 @@
+@import "../dashboard-rootuser/dashboard-rootuser.component.css";
+.page{
+    color:white;
+    padding: 0 1rem;
+    background: #f1f5f9;
+}
+.page__box{
+    min-height: 120px;
+    background: linear-gradient(1deg,#33033afb,#2c3344); 
+    margin: 0 -1rem;
+    font-size: 50px;
+    color:#b9b9d3;
+}
+.page__content{
+    min-height: calc(100vh - 5px);
+    border-radius: 10px;
+    margin-top: -2rem;
+    background: white;
+    color: black;
+    font-size: 1rem;
+}
+.page__content-data{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}

@@ -1,0 +1,41 @@
+<!--SIDE BAR CODE WITH THE LINKS-->
+<mat-nav-list>
+    <div class="logo py-4">
+        StreamX
+    </div>
+    <mat-divider></mat-divider>
+    <h2 matSubheader class="mt-2">StreamX Application</h2>
+    <a mat-list-item routerLink="/rootUserHome" routerLinkActive="list-item-active" *ngIf="isRootUser">
+         <mat-icon>home</mat-icon>
+         Home
+    </a>
+    <a mat-list-item routerLink="/adminHome" routerLinkActive="list-item-active" *ngIf="isAdmin">
+        <mat-icon>home</mat-icon>
+        Home
+   </a>
+   <a mat-list-item routerLink="/userHome" routerLinkActive="list-item-active" *ngIf="isUser">
+        <mat-icon>home</mat-icon>
+        Home
+   </a>
+    <a mat-list-item routerLink="/rootUserDash" routerLinkActive="list-item-active" *ngIf="isRootUser">
+        <mat-icon>dashboard</mat-icon>
+         Dashboard
+    </a>
+    <a mat-list-item routerLink="/adminDashboard" routerLinkActive="list-item-active" *ngIf="isAdmin">
+        <mat-icon>dashboard</mat-icon>
+          Dashboard
+    </a>
+    <a mat-list-item routerLink="/userDashboard" routerLinkActive="list-item-active" *ngIf="isUser">
+        <mat-icon>dashboard</mat-icon>
+          Dashboard
+    </a>
+    
+    <a mat-list-item routerLink="/adminsList" routerLinkActive="list-item-active" *ngIf="isRootUser">
+        <mat-icon>edit</mat-icon>
+         Admins List
+   </a>
+   <a mat-list-item routerLink="/usersList" routerLinkActive="list-item-active" *ngIf="isRootUser">
+        <mat-icon>edit</mat-icon>
+        Users List
+    </a>
+</mat-nav-list>

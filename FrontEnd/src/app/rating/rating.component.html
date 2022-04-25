@@ -1,0 +1,9 @@
+
+
+
+  <h2>Angular 13 Star Rating Example</h2>
+  <div style="font-size:large;">
+      <ngb-rating [max]="5" [(rate)]="currentRate" [readonly]="false"></ngb-rating>
+        <p>{{currentRate}}</p>
+        <button class="btn btn-black" (click)="submitRate()">Submit Rating</button>
+  </div>

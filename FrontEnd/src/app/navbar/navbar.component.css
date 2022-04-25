@@ -1,0 +1,8 @@
+.navbar-brand{
+  margin-left: 10%;
+  font-size: 1.7em;
+  font-weight: 700;
+}
+.navbar{
+  background:linear-gradient(2deg,#33033afb,#2c3344); 
+}

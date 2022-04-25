@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap');
+.page__box, h2, h5 , h6{
+    font-family:'Comfortaa', cursive;
+}
+h2{
+    font-size: 1.6rem;
+
+}
+:host{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+mat-drawer{
+    width: 239px;
+    background: linear-gradient(1deg,#33033afb,#2c3344); 
+}
+mat-drawer-container{
+    height: 100%;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 19vw;
+    object-fit: cover;
+}
+.page{
+    color:white;
+    padding: 0 1rem;
+    background: #f1f5f9;
+}
+.page__box{
+    min-height: 120px;
+    background: linear-gradient(1deg,#33033afb,#2c3344); 
+    margin: 0 -1rem;
+    font-size: 50px;
+    color:#b9b9d3;
+}
+.page__content{
+    min-height: calc(300vh - 45px);
+    border-radius: 10px;
+    margin-top: -2rem;
+    background: white;
+    color: black;
+    font-size: 1rem;
+}
+/* .page__content-data{
+    top: 12%;
+    left: 30%;
+    transform: translate(-30%,-20%);
+} */

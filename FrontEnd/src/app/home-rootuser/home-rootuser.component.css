@@ -1,0 +1,48 @@
+/* Side Bar */
+@import "../dashboard-rootuser/dashboard-rootuser.component.css";
+@import url('https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap');
+.page{
+    color:white;
+    padding: 0 1rem;
+    background: #f1f5f9;
+}
+h1, label{
+    font-family:'Comfortaa', cursive;
+}
+.page__box{
+    min-height: 120px;
+    background: linear-gradient(1deg,#33033afb,#2c3344); 
+    margin: 0 -1rem;
+    font-size: 50px;
+    color:#b9b9d3;
+    font-family:'Comfortaa', cursive;
+    /* font-size: 1.3rem; */
+}
+.page__content{
+    min-height: 900px;
+    border-radius: 10px;
+    margin-top: -2rem;
+    background: white;
+    color: black;
+    font-size: 1rem;
+}
+.page__content-data{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+/* upload video form */
+
+.cardShadow{
+    background:linear-gradient(4deg,#690077,#55165efb,#793f80,#000);
+    box-shadow: #000;
+  }
+  h1{
+    color: #aaaacc;
+  }
+  label{
+    color: lavender;
+  }
+ 

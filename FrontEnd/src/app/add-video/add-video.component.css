@@ -1,0 +1,130 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap');
+@import "../dashboard-rootuser/dashboard-rootuser.component.css";
+h2,h3,.highlight,a,#masthead h4,label,.btn {
+  font-family:'Comfortaa', cursive;
+  font-size: 1rem;
+}
+h1{
+  font-family:'Comfortaa', cursive;
+  font-size: 1.3rem;
+}
+.bg-ground{
+  background-color:lavender;
+  background-size: contain;
+  margin: 0;
+  padding: 0;
+}
+#masthead {
+min-height:199px;
+background-color:#43064bfb;
+/* width:auto; */
+color:#aaaacc;
+}
+
+#masthead h1 {
+font-size: 63px;
+line-height: 1;
+color:whitesmoke;
+margin-top:40px;
+}
+#topPanel {
+padding-top:0px;
+padding-left:22px;
+padding-right:22px;
+}
+.panel-body {
+padding-top:0px;
+}
+
+#masthead .well {
+margin-top:31px;
+background-color: #55165efb;
+border-color:#001722;
+color:#efefff;
+min-height:127px;
+}
+
+
+
+/* .distr-card:hover{
+  opacity: 0.9;
+  color: black !important;
+} */
+.shadow{
+  background:linear-gradient(4deg,#690077,#55165efb,#793f80,#000);
+  box-shadow: #000;
+}
+/* .shadow::before,
+.shadow::after{
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background: linear-gradient(45deg, #B0E0E6, #00ff00, #ffff00, #FFE4E1, #B0E0E6, #00ff00, #ffff00, #FFE4E1);
+  background-size: 200% 200%;
+  width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    z-index: -1;
+    animation: animate 10s linear infinite;
+} */
+/* .shadow::after{
+  filter: blur(10px);
+
+}
+@keyframes animate {
+  0% {
+      background-position: 0 0;
+  }
+  50% {
+      background-position: 300% 0;
+  }
+  100% {
+      background-position: 0 0;
+  }
+} */
+h1{
+  color: #aaaacc;
+}
+label{
+  color: lavender;
+}
+.page{
+  color: white;
+}
+
+/* Side Bar */
+
+.page{
+    color:white;
+    padding: 0 1rem;
+    background: #f1f5f9;
+}
+.page__box{
+    min-height: 120px;
+    background: #5f016bce;
+    margin: 0 -1rem;
+    font-size: 36px;
+}
+.page__content{
+    min-height: calc(100vh - 5px);
+    border-radius: 10px;
+    margin-top: -2rem;
+    background: white;
+    color: black;
+    font-size: 1rem;
+}
+.page__content-data{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+/* upload video form */
+.shadowBox{
+    background:linear-gradient(4deg,#690077,#55165efb,#793f80,#000);
+    box-shadow: #000;
+  }
+  label{
+      color: lavender;
+  }

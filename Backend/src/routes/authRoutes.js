@@ -1,3 +1,4 @@
+// The routes for Authenticatio and authorization + Sign up
 const express = require('express');
 const authRouter = express.Router();
 
